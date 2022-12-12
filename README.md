@@ -8,8 +8,10 @@
 처음 뜨는 로그인 화면에서는 아이디, 비밀번호 아무거나 입력하면 boardList.jsp로 이동함.
 
 현재 프로젝트 내에 존재하는 화면(jsp)은 총 세 개.
+
 [로그인]
 - login.jsp
+
 [게시판]
 - boardList.jsp
 - boardWrite.jsp
@@ -18,8 +20,10 @@
 *head, header, lnb, footer등 공통 부분은 임의로 별도 분리하여 include 했음.
 
 현재 프로젝트 내에 존재하는 컨트롤러는 총 두 개.
+
 [로그인]
 - LoginController.java
+
 [게시판]
 - BoardController.java
 
@@ -37,3 +41,17 @@ TODO :
    단, 비동기형식(ajax이용)이어야 함.
 
 3. 컨트롤러에서 insert 관련 메소드를 생성하고, 들어온 폼 데이터를 log 찍어서 확인하기.
+
+
+
+
+
+---
+
+
+commit msg 쓰는 법
+
+"docs:~~"   : 문서/주석 등등 관련 커밋
+"fix: ~~"   : 버그 수정
+"add: ~~"   : 파일, 클래스 추가
+"feat: ~~"  : 기능 최초 생성
