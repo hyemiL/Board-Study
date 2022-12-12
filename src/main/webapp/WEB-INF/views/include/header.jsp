@@ -30,8 +30,8 @@
 			<li class="dep"><a href="#" class="dep_m on">게시판</a> <!-- 활성화 class="on" -->
 				<div class="dep2">
 					<ul class="li_dep">
-						<li class="li"><a href="#" class="dep_m2">게시글 리스트</a></li>
-						<li class="li"><a href="#" class="dep_m2">게시글 등록</a></li>
+						<li class="li"><a href="/board/list" class="dep_m2">게시글 리스트</a></li>
+						<li class="li"><a href="/board/write" class="dep_m2">게시글 등록</a></li>
 					</ul>
 				</div></li>
 			<!-- //사용자관리 -->

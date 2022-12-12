@@ -161,5 +161,16 @@
 		<!-- //footer -->
 	</div>
 	<!-- wrap -->
+	
+<script>
+	document.querySelector('.btn_xs02').addEventListener('click', e => {
+		console.log("안녕하세요");
+	});
+	
+	$('.btn_xs02').on("click", function() {
+		console.log("jquery!!");
+	});
+</script>
+
 </body>
 </html>

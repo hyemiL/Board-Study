@@ -16,10 +16,8 @@ public class BoardController {
 	private final Logger log = LoggerFactory.getLogger(BoardController.class);
 
 	@RequestMapping(value = "/list")
-	public String boardList(Model model, @RequestParam("ID") String id, @RequestParam("PASS") String password) {
+	public String boardList(Model model) {
 		HashMap<String, Object> userInfo = new HashMap<>();
-		userInfo.put("id", id);
-		userInfo.put("password", password);
 		log.debug("##### BoardController - dashboard userInfo : {}", userInfo);
 
 		model.addAttribute(userInfo);
