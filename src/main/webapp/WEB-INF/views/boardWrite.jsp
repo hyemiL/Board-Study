@@ -32,7 +32,7 @@
 					<!-- 상단우측 게시판 정보-->
 					<!-- board_ty -->
 					<div class="board_ty">
-						<form method="post">
+						<form action = "/board/insert" method="POST" id = "insertFrm">
 						<table>
 							<caption>게시글 등록</caption>
 							<colgroup>
@@ -43,11 +43,11 @@
 								<tr>
 									<th scope="row"><span class="ico_es txt_red">*</span>글 제목</th>
 									<td class="left">
-										<input type="text" class="input_ty" style="width: 100%;">
+										<input type="text" class="input_ty" id = "title" name = "title" style="width: 100%;">
 								</tr>
 								<tr>
 									<th scope="row"><span class="ico_es txt_red">* </span>글 내용</th>
- 									<td><textarea id="summernote" name="editordata"></textarea></td>
+ 									<!-- <td><textarea id="summernote" name="editordata"></textarea></td> -->
 								</tr>
 								<tr>
 									<th scope="row"><span class="ico_es txt_red">* </span>전체 공개 허용</th>
@@ -71,7 +71,7 @@
 					<!-- btn_area -->
 					<ul class="btn_area">
 						<li class="right">
-							<a href="#" class="btn_s btn_ty02"><span class="ico_confirm">저장</span></a> 
+							<a href="#" class="btn_s btn_ty02" onclick="insertBoard();"><span class="ico_confirm">저장</span></a> 
 					<!--<a href="#" class="btn_s btn_ty02"><span class="ico_write">수정</span></a>-->
 							<a href="#" class="btn_s btn_ty"><span class="ico_delete">삭제</span></a>
 					<!--<a href="#" class="btn_s btn_ty"><span class="ico_list">목록</span></a>-->
@@ -91,7 +91,32 @@
 	</div>
 	<!-- wrap -->
 	
-	<script>
+	<script>	
+ 	function insertBoard() {
+ 		var title = $("input#title").val();
+ 		var editordata = $("textarea#summernote").val();
+ 		
+		$.ajax({
+			url: "/board/insert",
+			type: "POST",
+			data: {
+				title: "title"
+				/* editordata: "editordata" */
+			},
+			success: function(data) {
+				//"title" : $('#title').val();
+				//"editordata" : $('#editordata').val()
+				alert("success", data);
+			},
+			error: function(request, status, error) {
+				alert("error" + error);
+				console.log(title); 
+				console.log(editordata);
+			}
+		})
+	};
+	
+	
 	$(document).ready(function() {
 		//여기 아래 부분
 		$('#summernote').summernote({
