@@ -24,8 +24,17 @@ public class BoardController {
 	public String boardList(Model model) {
 		HashMap<String, Object> userInfo = new HashMap<>();
 		log.debug("##### BoardController - dashboard userInfo : {}", userInfo);
-
-		model.addAttribute(userInfo);
+		
+		HashMap<String, Object> boardInfo = new HashMap<>();
+		boardInfo.put("no", "1,126");
+		boardInfo.put("userId", "test03");		
+		boardInfo.put("category", "잠");		
+		boardInfo.put("title", "안녕하세요");
+		boardInfo.put("regDate", "2022.12.20 11:02:05");
+		
+		log.debug("boardInfo : {}", boardInfo);
+		
+		model.addAttribute("boardInfo", boardInfo);
 		return "/boardList";
 	}
 

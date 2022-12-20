@@ -107,6 +107,13 @@
 							</thead>
 							<tbody>
 								<tr>
+									<td>${boardInfo.no}</td>
+									<td>${boardInfo.userId}</td>
+									<td>${boardInfo.category}</td>
+									<td>${boardInfo.title}</td>
+									<td>${boardInfo.regDate}</td>
+								</tr>
+								<tr>
 									<td>1,125</td>
 									<td>test02</td>
 									<td>개발, 동·식물</td>
