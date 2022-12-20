@@ -47,7 +47,7 @@
 								</tr>
 								<tr>
 									<th scope="row"><span class="ico_es txt_red">* </span>글 내용</th>
- 									<!-- <td><textarea id="summernote" name="editordata"></textarea></td> -->
+ 									<td><textarea id="summernote" name="editordata"></textarea></td>
 								</tr>
 								<tr>
 									<th scope="row"><span class="ico_es txt_red">* </span>전체 공개 허용</th>
@@ -92,7 +92,7 @@
 	<!-- wrap -->
 	
 	<script>	
- 	function insertBoard() {
+/*  	function insertBoard() {
  		var title = $("input#title").val();
  		var editordata = $("textarea#summernote").val();
  		
@@ -100,18 +100,45 @@
 			url: "/board/insert",
 			type: "POST",
 			data: {
-				title: "title"
-				/* editordata: "editordata" */
+				title: title,
+				editordata: editordata
 			},
 			success: function(data) {
-				//"title" : $('#title').val();
-				//"editordata" : $('#editordata').val()
 				alert("success", data);
 			},
 			error: function(request, status, error) {
 				alert("error" + error);
 				console.log(title); 
 				console.log(editordata);
+			}
+		})
+	}; */
+	
+	function insertBoard() {
+		
+	var data = {};
+	data["title"] = $('input#title').val();
+	data["editordata"] = $('textarea#summernote').val();
+
+	
+		$.ajax({
+			url: "/board/insert",
+			type: "POST",
+			contentType: "application/json", 
+			data: JSON.stringify(data),
+			success: function(data) {
+				console.log(data);
+				console.log("success");
+				/* console.log(title);
+				console.log(editordata); */
+				console.log(data.title);
+				console.log(data.editordata);
+			},
+			error: function(request, status, error, data) {
+				console.log(data);
+				console.log("error" + error);
+/* 				console.log(title); 
+				console.log(editordata); */
 			}
 		})
 	};
